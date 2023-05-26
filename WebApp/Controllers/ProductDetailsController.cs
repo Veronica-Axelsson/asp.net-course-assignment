@@ -23,6 +23,18 @@ public class ProductDetailsController : Controller
 
     #endregion
 
+    public IActionResult Index()
+    {
+
+        return View();
+    }
+
+    public IActionResult Details(string articleNumber)
+    {
+
+        return View(articleNumber);
+    }
+
 
     //public async Task<IActionResult> Index(string articleNumber)
     //{
@@ -43,13 +55,13 @@ public class ProductDetailsController : Controller
 
 
 
-    public /*async Task<*/IActionResult/*>*/ Index(string _articleNumber)
-    {
-        var viewModel = new GridCollectionItemViewModel()
-        {
-            //Products = await _productDetailsService.GetProductById(_articleNumber)
-        };
-        return View(viewModel);
-    }
+    //public /*async Task<*/IActionResult/*>*/ Index(string _articleNumber)
+    //{
+    //    var viewModel = new GridCollectionItemViewModel()
+    //    {
+    //        //Products = await _productDetailsService.GetProductById(_articleNumber)
+    //    };
+    //    return View(viewModel);
+    //}
 
 }

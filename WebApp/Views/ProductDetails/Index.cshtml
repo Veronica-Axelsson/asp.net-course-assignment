@@ -1,213 +1,38 @@
-﻿@model GridCollectionItemViewModel
+﻿@inject ProductRepository productRepo
 
 
 @{
     ViewData["Title"] = "Products detailed page";
 }
 
-@*@{
-    var tag = tagService.GetTagsAsync();
-    var products = await productService.GetAllAsync();
 
-}*@
-
-<h1>@Model.Name</h1>
-<p>Price: @Model.Price</p>
-<p>Description: @Model.Description</p>
-
-<!-- hero start -->
-<section class="hero">
-    <img src="~/images/placeholders/1920x300shop.svg" alt="">
-</section>
-<!-- hero end -->
-<!-- product-img-text start -->
-<section class="product-img-text">
-    <div class="container">
-        <div class="boxes2">
-
-           @* @if(Model != null)
-            {*@
-                <p>@Model.ArticleNumber</p>
-                <div class="images">
-
-                    @if (Model.ImageUrl != null)
-                    {
-                        <img src="~/images/products/@Model.ImageUrl" alt="@Model.Name" height="50" width="50" />
-                    }
+<div class="pt-5">
+    <div class="pt-5">Article number:</div>
+    <div>Hej</div>
+</div>
 
 
-                    @*<img class="big-pic" src="@Model.ImageUrl" alt="">*@
-                    @*                               <img class="small-pic" src="./images/placeholders/120x113.svg" alt="">
-                *@              <img class="small-pic" src="./images/placeholders/120x113.svg" alt="">
-                    <img class="small-pic" src="./images/placeholders/120x113.svg" alt="">
-                    <img class="small-pic" src="./images/placeholders/120x113.svg" alt="">
+@*Hämtar alla -----------------------------------------------------------------------------------*@
+<div>
+    @foreach(var product in await productRepo.GetAsync())
+    {
+        <div>
+            <div><a asp-action="details" asp-route-string-id="@product.ArticleNumber">@product.Name</a></div>
 
-                </div>
-
-                <div class="text">
-                    <div class="title">@Model.Name</div>
-                    <p>@Model.Description</p>
-                    <hr class="hr" />
-
-                    <div class="star-text">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <p class="rev">16 Reviews</p>
-                    </div>
-                    <div class="price">@("$" + Model.Price)</div>
-                    <div class="amount">
-                        <div class="amount-button">
-                            <button class="minus btn-white">-</button>
-                            <button class="nr btn-white">2</button>
-                            <button class="plus btn-white ">+</button>
-                        </div>
-                        <button class="add btn-theme">Add to Cart <i class="fa-light fa-cart-plus"></i></button>
-                    </div>
-
-
-                    <div class="in-stock">
-                        <i class="red fa-solid fa-circle"></i>
-                        <i class="yellow fa-solid fa-circle"></i>
-                        <i class="green fa-solid fa-circle"></i>
-                        <div class="sku">SKU: N/A</div>
-                    </div>
-                    <button class="btn-1 btn-white">Add to wishlist</button>
-                    @foreach (var categories in Model.Categories)
-                    {
-                        <div class="categort-text">@("$" + categories.TagName)</div>
-
-                    }
-                </div>
-           @* }*@
-
-
-
-
-        </div>
-
-    </div>
-</section>
-<!-- product-img-text end -->
-<!--product-detail start -->
-<section class="product-detail">
-    <div class="container">
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">DESCRIPTION</button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="additional-info-tab" data-bs-toggle="tab" data-bs-target="#additional-info-tab-pane" type="button" role="tab" aria-controls="additional-info-tab-pane" aria-selected="false">ADDITIONAL INFO</button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-tab-pane" type="button" role="tab" aria-controls="reviews-tab-pane" aria-selected="false">REVIEWS (0)</button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="shipping-delivery-tab" data-bs-toggle="tab" data-bs-target="#shipping-delivery-tab-pane" type="button" role="tab" aria-controls="shipping-delivery-tab-pane" aria-selected="false">SHIPPING & DELIVERY</button>
-            </li>
-
-        </ul>
-
-        <div class="tab-content" id="myTabContent">
-            <div class="adjusttab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0">
-                <h2>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h2>
-                <div class="des-box">
-                    <div class="des-text">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
-                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                    </div>
-
-                    <div class="des-image">
-                        <img src="./images/placeholders/469x356.svg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="additional-info-tab-pane" role="tabpanel" aria-labelledby="additional-info-tab" tabindex="0">
-                <h2>ADDITIONAL INFO</h2>
-                <div class="des-box">
-                    <div class="des-text">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
-                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                    </div>
-
-                    <div class="des-image">
-                        <img src="./images/placeholders/469x356.svg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
-                <h2>REVIEWS</h2>
-                <div class="des-box">
-                    <div class="des-text">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
-                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                    </div>
-
-                    <div class="des-image">
-                        <img src="./images/placeholders/469x356.svg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="shipping-delivery-tab-pane" role="tabpanel" aria-labelledby="shipping-delivery-tab" tabindex="0">
-                <h2>SHIPPING & DELIVERY</h2>
-                <div class="des-box">
-                    <div class="des-text">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
-                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
-                    </div>
-
-                    <div class="des-image">
-                        <img src="./images/placeholders/469x356.svg" alt="">
-                    </div>
-                </div>
+            @if (product.ImageUrl != null)
+            {
+                <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+            }
+            <div>
+                @foreach (var tag in product.ProductTags)
+                {
+                    <span class="me-2">@tag.Tag.TagName</span>
+                }
             </div>
         </div>
+        
+  
+    }
+</div>
 
 
-    </div>
-</section>
-<!-- product-detail end -->
-<!-- products-related start -->
-<section class="products-related">
-    <div class="container">
-        <hr class="hr" />
-        <div class="title">Related Products</div>
-        <p> 4 cards</p>
-
-
-    </div>
-</section>
-<!-- products-realted end -->
-<!-- img-5 start -->
-<section class="img-5">
-    <div class="container ">
-        <div class="images">
-            <img class="pic" src="./images/placeholders/200x122.svg" alt="">
-            <img class="pic" src="./images/placeholders/200x122.svg" alt="">
-            <img class="pic" src="./images/placeholders/200x122.svg" alt="">
-            <img class="pic" src="./images/placeholders/200x122.svg" alt="">
-            <img class="pic" src="./images/placeholders/200x122.svg" alt="">
-
-        </div>
-
-    </div>
-</section>
-<!-- img-5 end -->
