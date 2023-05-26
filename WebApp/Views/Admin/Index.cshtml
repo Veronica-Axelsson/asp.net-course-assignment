@@ -1,0 +1,61 @@
+﻿@*@model UsersViewModel*@
+@inject UserService userService
+
+@{
+    ViewData["Title"] = "Admin - Backoffice";
+}
+
+<div class="container pt-5">
+    <div class="pt-5">
+        <h1>Backoffice</h1>
+        <a class="mb-5 mt-4 link btn btn-info" asp-controller="ProductBackoffice" asp-action="index">TO PRODUCTS</a>
+
+    </div>
+
+
+
+    <h4 class="mb-4">Lista på samtliga användare och deras roll.</h4>
+
+    <div class="container">
+        @foreach (var _user in await userService.GetUsersAndRolesAsync())
+        {       
+        <div class="mb-4">
+            <div class="d-flex">
+                User: @_user.Email
+                <div class="ms-5">
+                    Role: @foreach (var roleName in _user.RoleNames)
+                    {
+                        <span>@roleName</span>
+                    }
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<partial name="/Views/Partials/_AdminPartial.cshtml" />
+*@
+
+
+
+
+
+
+

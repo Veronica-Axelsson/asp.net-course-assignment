@@ -1,0 +1,30 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.img-5 {
+    background-color: $color-product-bg;
+    padding: 3rem 0;
+
+
+    .container {
+        
+    }
+
+    .images  {
+        text-align: center;
+    }
+
+    .pic {
+        margin: 0 8px;
+        width: 45%;
+        margin-bottom: 30px;
+
+        @include lg {
+            width: auto;
+            margin: 11px 8px;
+
+        }
+    }
+
+}

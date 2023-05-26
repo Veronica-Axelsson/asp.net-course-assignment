@@ -1,0 +1,31 @@
+@import './core/fonts';
+@import './core/colors';
+@import './core/mixins';
+
+@import './components/base';
+@import './components/buttons';
+@import './components/collectionitem';
+@import './components/collectioncontent';
+@import './components/forms';
+
+@import './components/header';
+@import './components/footer';
+@import './components/breadcrumb';
+@import './components/map';
+@import './components/showcase';
+@import './components/gridcollection';
+@import './components/uptosell';
+@import './components/topselling';
+@import './components/newsletter';
+@import './components/contactform';
+@import './components/register-form.scss';
+@import './components/_productRegPage.scss';
+@import './components/_tabProductsMenu.scss';
+@import './components/_bmerketo-card.scss';
+
+
+/* Product details page*/
+@import './components/_img-5.scss';
+@import './components/_product-detail.scss';
+@import './components/_product-img-text.scss';
+@import './components/_products-related.scss';

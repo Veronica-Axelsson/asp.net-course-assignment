@@ -1,0 +1,136 @@
+﻿@model UserSignUpViewModel
+
+@{
+    ViewData["Title"] = "Register new  account";
+}
+
+
+<div class="register-form d-flex">
+    <div class="col-12 mt-3 d-flex justify-content-center">
+     
+  
+       
+
+        <form enctype="multipart/form-data" method="post" novalidate runat="server" class=" col-xl-6">
+            <p>Please Register Your new Account</p>
+            <p>-----------</p>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="d-flex" >
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="FirstName" class="form-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <small><span asp-validation-for="FirstName" class="text-danger"></span></small>
+                </div>
+
+                <div class="mx-3"></div>
+
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="LastName" class="form-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <small><span asp-validation-for="LastName" class="text-danger"></span></small>
+                </div>
+            </div>
+
+       
+
+            <div class="mb-3">
+                <label asp-for="StreetName" class="form-label"></label>
+                <input asp-for="StreetName" class="form-control" />
+                <small><span asp-validation-for="StreetName" class="text-danger"></span></small>
+            </div>
+
+            <div class="d-flex">
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="PostalCode" class="form-label"></label>
+                    <input asp-for="PostalCode" class="form-control" />
+                    <small><span asp-validation-for="PostalCode" class="text-danger"></span></small>
+                </div>
+
+                <div class="mx-3"></div>
+
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="City" class="form-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <small><span asp-validation-for="City" class="text-danger"></span></small>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="PhoneNumber" class="form-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <small><span asp-validation-for="PhoneNumber" class="text-danger"></span></small>
+                </div>
+
+                <div class="mx-3"></div>
+
+                <div class="mb-3" style="width:50%">
+                    <label asp-for="Company" class="form-label"></label>
+                    <input asp-for="Company" class="form-control" />
+                    <small><span asp-validation-for="Company" class="text-danger"></span></small>
+                </div>
+            </div>
+
+     
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <small><span asp-validation-for="Email" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <small><span asp-validation-for="Password" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <small><span asp-validation-for="ConfirmPassword" class="text-danger"></span></small>
+            </div>
+
+            @*       <div class="mb-3">
+            <label asp-for="ProfileImg" class="_formAdjust form-label">Pro Image</label>
+            <input asp-for="ProfileImg" class="form-control" />
+            <small><span asp-validation-for="ProfileImg" class="text-danger"></span></small>
+            </div>*@
+
+            <p>[Box]  I have read and accepts the terms and agreements</p>
+            <div class="d-flex">
+                @*      @foreach (SelectListItem tag in ViewBag.Tags)
+                {
+                <div class="d-flex pe-2 me-5">
+                <input type="checkbox" name="Tags" id="tag-@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
+                <label for="tag-@tag.Text-@tag.Value" class="ps-2 form-check-label">@tag.Text</label>
+                </div>
+                }
+
+                *@
+                <asp:CheckBox ID="CheckBox1" runat="server" Text="I have read and accept the terms and agreements" />
+
+                <asp:RequiredFieldValidator ID="rfvAgree" runat="server" ControlToValidate="chkAgree" Text="You must accept the terms and agreements." />
+
+            </div>
+
+
+
+            <div class="mt-5">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+      
+
+    
+</div>

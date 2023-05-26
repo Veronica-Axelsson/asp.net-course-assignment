@@ -1,0 +1,212 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.grid-collection {
+    padding: 40px 20px;
+
+    h1 {
+        margin-top: 2rem;
+        font-family: $font-poppins;
+        color: $color-dark-2;
+        font-size: 48px;
+        text-align:center;
+    }
+
+    ul {
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .tabProductsTop {
+        text-decoration: none;
+        border-style: none;
+        align-items: baseline;
+        background-color: transparent;
+    }
+
+    .tabProducts {
+        border: none;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: transparent;
+    }
+
+    /*.title {
+        text-align: center;
+        font-family: $font-poppins;
+        font-weight: $font-weight-semibold;
+        font-size: 38px;
+        color: $color-dark-2;
+
+        @include md {
+            font-size: 48px;
+        }
+    }*/
+
+    /*.description {
+        text-align: center;
+        font-family: $font-poppins;
+        font-weight: $font-weight-semibold;
+        font-size: 1rem;
+        color: $color-dark-2;
+
+        @include md {
+            font-size: 48px;
+        }
+    }*/
+
+    /*.price {
+        text-align: center;
+        font-family: $font-poppins;
+        font-weight: $font-weight-semibold;
+        font-size: 1rem;
+        color: $color-dark-2;
+
+        @include md {
+            font-size: 48px;
+        }
+    }*/
+
+    /*.offerprice {
+        text-align: center;
+        font-family: $font-poppins;
+        font-weight: $font-weight-semibold;
+        font-size: 1rem;
+        color: $color-dark-2;
+        text-decoration: line-through;
+
+        @include md {
+            font-size: 48px;
+        }
+    }*/
+
+   /* .categories {
+        display: none;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include lg {
+            display: flex;
+        }
+
+        .category-item {
+            margin-right: 5px;
+
+            & + li::before {
+                content: "/";
+                margin-right: 5px;
+            }
+        }
+    }*/
+
+    .grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+
+        @include md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include lg {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include xl {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .load-more {
+        margin-top: 40px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .bmerketo-card {
+        text-decoration: none;
+        display: block;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        color: $color-dark-2;
+        font-family: $font-poppins;
+    }
+
+    .bmerketo-card h1 {
+        font-size: 48px;
+        font-weight: $font-weight-semibold;
+        text-align: center;
+        padding: 3rem 0 2rem 0;
+    }
+
+    .bmerketo-card .b-card {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .bmerketo-card .b-card a {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        text-decoration: none;
+        width: 270px;
+    }
+
+
+    .bmerketo-card .b-card a .card-body {
+        display: block;
+        text-decoration: none;
+    }
+
+
+    .bmerketo-card .b-card a .card-body img {
+        width: 270px;
+        height: auto;
+    }
+
+    .bmerketo-card .b-card a .card-body .cardContent {
+        color: black;
+    }
+
+
+    .bmerketo-card .b-card a .card-body .cardContent .title {
+        text-decoration: none;
+        padding-top: 10px;
+    }
+
+    .bmerketo-card .b-card a .card-body .cardContent .body-text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .bmerketo-card .b-card a .card-body .cardContent .body-text .priceOffer {
+        text-decoration: line-through;
+    }
+
+    .bmerketo-card .b-card a .card-body .cardContent .body-text .price {
+    }
+
+    .bmerketo-card .b-card a .card-body .cardContent .body-text i {
+        text-decoration: none;
+        text-align: right;
+        align-items: center;
+        font-size: 24px;
+        color: $color-dark-5;
+        padding-right: 10px;
+
+        &:hover {
+            color: $color-dark-2;
+        }
+    }
+  
+}

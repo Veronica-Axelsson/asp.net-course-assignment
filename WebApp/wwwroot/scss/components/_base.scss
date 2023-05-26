@@ -1,0 +1,49 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+html, body {
+    font-size: 16px;
+    font-family: $font-roboto;
+    font-weight: $font-weight-regular;
+    color: $color-dark-3;
+}
+
+.open-menu {
+    width: 100vw !important;
+    opacity: 0.99;
+    transform: translateX(-100%);
+}
+
+.invalid {
+    border: 1px solid $color-theme-1 !important;
+} 
+
+.position-static {
+    position: static;
+}
+
+.position-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.validation-summary-errors {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: lightyellow;
+
+    ul {
+        list-style: none;
+        padding: 2rem;
+        margin: 0;
+    }
+}
+
+
+.newProductPage {
+    padding-top: 10rem;
+}

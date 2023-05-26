@@ -1,0 +1,24 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+._productRegPage {
+    display: flex;
+
+    .reg-title {
+        padding-top: 7rem;
+    }
+
+    .formDesign {
+        padding-bottom: 3rem;
+        
+        ._formAdjust 
+        {
+            margin-top: 2rem;
+        }
+    }
+
+    button {
+        padding: 1rem;
+    }
+}

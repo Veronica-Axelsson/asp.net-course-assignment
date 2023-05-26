@@ -1,0 +1,84 @@
+﻿@model ProductRegistrationViewModel
+@{
+    ViewData["Title"] = "Register new product";
+}
+
+
+<section class="_productRegPage">
+    <div class="col-8 lg-col-6 container">
+
+        <div class="container newProductPage">
+            <a class="link btn btn-info" asp-controller="ProductBackoffice" asp-action="index">BACK TO PRODUCTS</a>
+        </div>
+
+
+        <div class="reg-title">
+            <H3>Register new product</H3>
+            <p class="">-----------</p>
+        </div>
+
+        <form enctype="multipart/form-data" method="post" asp-action="Register" class="mt-5 col-10 col-lg-8" novalidate>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="formDesign">
+                <div class="mb-3">
+                    <label asp-for="ArticleNumber" class="_formAdjust form-label">Article Number</label>
+                    <input asp-for="ArticleNumber" class="form-control" />
+                    <small><span asp-validation-for="ArticleNumber" class="text-danger"></span></small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="_formAdjust form-label">Product Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <small><span asp-validation-for="Name" class="text-danger"></span></small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="_formAdjust form-label">Price</label>
+                    <input asp-for="Price" class="form-control" />
+                    <small><span asp-validation-for="Price" class="text-danger"></span></small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="OfferPrice" class="_formAdjust form-label">Offer Price</label>
+                    <input asp-for="OfferPrice" class="form-control" />
+                    <small><span asp-validation-for="OfferPrice" class="text-danger"></span></small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="_formAdjust form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="8"></textarea>
+                    <small><span asp-validation-for="Description" class="text-danger"></span></small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ProductImage" class="_formAdjust form-label">Product Image</label>
+                    <input asp-for="ProductImage" class="form-control" />
+                    <small><span asp-validation-for="ProductImage" class="text-danger"></span></small>
+                </div>
+
+                <div class="d-block mb-3 pt-5">
+                    <div>
+                        <p>Categories</p>
+                    </div>
+                    <div class="d-flex">
+                        @foreach (SelectListItem tag in ViewBag.Tags)
+                        {
+                            <div class="d-flex pe-2 me-5">
+                                <input type="checkbox" name="Tags" id="tag-@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
+                                <label for="tag-@tag.Text-@tag.Value" class="ps-2 form-check-label">@tag.Text</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="d-grid mt-2 mb-5">
+                    <button type="submit" class="btn btn-success mt-5">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>

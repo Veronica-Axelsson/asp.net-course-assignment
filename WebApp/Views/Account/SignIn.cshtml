@@ -1,0 +1,79 @@
+﻿@model UserSignInViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+<nav class="menu-links">
+    @if (!signInManager.IsSignedIn(User))
+    {
+        <p></p>
+
+    }
+    else
+    {
+        <a class="link" asp-controller="account" asp-action="Register">Register</a>
+        <a class="link" asp-controller="account" asp-action="Signin">Login</a>
+    }
+</nav>
+
+
+<div class="register-form d-flex">
+    <div class="col-12 mt-3 d-flex justify-content-center">
+
+
+
+
+        <form method="post" novalidate runat="server" class=" col-xl-6">
+            <p>Please Login to Your Account</p>
+            <p>-----------</p>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="mb-3">
+                <div class="d-flex justify-content-between">
+                    <label asp-for="Email" class="form-label"></label>
+                    <a class="ps-4 link" asp-controller="account" asp-action="Register">Don't have an Account yet?</a>
+                </div>
+             
+                <input asp-for="Email" class="form-control" />
+                <small><span asp-validation-for="Email" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3 mt-5">
+                <div class="d-flex justify-content-between">
+                    <label asp-for="Password" class="form-label"></label>
+                    <p class="ps-4">Forgot Your Password ? </p>
+                </div>
+
+                <input asp-for="Password" class="form-control" />
+                <small><span asp-validation-for="Password" class="text-danger"></span></small>
+            </div>
+
+
+@*            <p>[Box]  Please keep me logged in</p>
+*@
+            <asp:CheckBox ID="CheckBox1" runat="server" Text="Please keep me logged in" />
+
+@*                <asp:RequiredFieldValidator ID="rfvAgree" runat="server" ControlToValidate="chkAgree" Text="You must accept the terms and agreements." />
+*@
+           
+            <div class="mt-5">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+
+
+
+</div>

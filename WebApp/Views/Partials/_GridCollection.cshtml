@@ -1,0 +1,229 @@
+﻿@model GridCollectionItemViewModel
+
+
+
+<section class="grid-collection">
+    <div class="container">
+
+        @* Section title *@
+        <h1 class="title">Best Collection</h1>
+
+        @* Tab menu *@
+        <div class="adjustTab">
+            <div class="adjustTab2">
+                <ul class="tabProductsTop nav nav-tabs" id="myTab" role="tablist">
+                    <!-- All products -->
+                    <li class="nav-item" role="presentation">
+                        <button class="tabProducts active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All</button>
+                    </li>
+
+                    <li>/</li>
+
+                    <!-- new products -->
+                    <li class="nav-item" role="presentation">
+                        <button class="tabProducts" id="new-tab" data-bs-toggle="tab" data-bs-target="#new-tab-pane" type="button" role="tab" aria-controls="new-tab-pane" aria-selected="false">New</button>
+                    </li>
+
+                    <li>/</li>
+
+                    <!-- popular -->
+                    <li class="nav-item" role="presentation">
+                        <button class="tabProducts" id="popular-tab" data-bs-toggle="tab" data-bs-target="#popular-tab-pane" type="button" role="tab" aria-controls="popular-tab-pane" aria-selected="false">Popular</button>
+                    </li>
+
+                    <li>/</li>
+
+                    <!-- featured -->
+                    <li class="nav-item" role="presentation">
+                        <button class="tabProducts" id="featured-tab" data-bs-toggle="tab" data-bs-target="#featured-tab-pane" type="button" role="tab" aria-controls="featured-tab-pane" aria-selected="false">Featured</button>
+                    </li>
+                </ul>
+
+
+                @* ---------- Content in tabs -------------------------------------------------- *@
+                <div class="tabContent tab-content" id="myTabContent">
+
+                    <!-- Tab All products -->
+                    <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+
+                        <div class="bmerketo-card">
+                            <div class="container">
+                                <div class="b-card ">
+
+                                       @foreach (var product in Model.Products)
+                                       {
+                                   @*       <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
+                                   
+                                        <partial name="/Views/Partials/_GridCollectionItem.cshtml" />
+
+                                            </a>
+                                       *@
+
+                                            <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@product.ArticleNumber">
+                                                <div class="card-body">
+
+                                                    @if (product.ImageUrl != null)
+                                                    {
+                                                        <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                                                    }
+                                                    <div class="cardContent">
+
+                                                        <h5 class="title">@(product.Name)</h5>
+
+                                                        <div class="body-text">
+                                                            @if (product.OfferPrice != null)
+                                                            {
+                                                                <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                                                            }
+                                                            <div class="price">@("$" + product.Price)</div>
+                                                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                           </a>
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Tab new products -->
+                    <div class="tab-pane fade" id="new-tab-pane" role="tabpanel" aria-labelledby="new-tab" tabindex="0">
+
+                        <div class="bmerketo-card">
+                            <div class="container">
+                                <div class="b-card ">
+                                    @foreach (var product in Model.Products)
+                                    {
+                                        @foreach (var categorie in product.Tags)
+                                        {
+                                            if (@categorie.TagId == 1)
+                                            {
+                                                <a href="#" class=" m-3">
+                                                    <div class="card-body">
+
+                                                        @if (product.ImageUrl != null)
+                                                        {
+                                                            <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                                                        }
+                                                        <div class="cardContent">
+
+                                                            <h5 class="title">@(product.Name)</h5>
+
+                                                            <div class="body-text">
+                                                                @if (product.OfferPrice != null)
+                                                                {
+                                                                    <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                                                                }
+                                                                <div class="price">@("$" + product.Price)</div>
+                                                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab popular -->
+                    <div class="tab-pane fade" id="popular-tab-pane" role="tabpanel" aria-labelledby="popular-tab" tabindex="0">
+
+                        <div class="bmerketo-card">
+                            <div class="container">
+                                <div class="b-card ">
+                                    @foreach (var product in Model.Products)
+                                    {
+                                        @foreach (var categorie in product.Tags)
+                                        {
+                                            if (@categorie.TagId == 2)
+                                            {
+                                                <a href="#" class=" m-3">
+                                                    <div class="card-body">
+
+                                                        @if (product.ImageUrl != null)
+                                                        {
+                                                            <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                                                        }
+                                                        <div class="cardContent">
+
+                                                            <h5 class="title">@(product.Name)</h5>
+
+                                                            <div class="body-text">
+                                                                @if (product.OfferPrice != null)
+                                                                {
+                                                                    <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                                                                }
+                                                                <div class="price">@("$" + product.Price)</div>
+                                                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab featured -->
+                    <div class="tab-pane fade" id="featured-tab-pane" role="tabpanel" aria-labelledby="featured-tab" tabindex="0">
+
+                        <div class="bmerketo-card">
+                            <div class="container">
+                                <div class="b-card ">
+                                    @foreach (var product in Model.Products)
+                                    {
+                                        @foreach (var categorie in product.Tags)
+                                        {
+                                            if (@categorie.TagId == 3)
+                                            {
+                                                <a href="#" class=" m-3">
+                                                    <div class="card-body">
+
+                                                        @if (product.ImageUrl != null)
+                                                        {
+                                                            <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                                                        }
+                                                        <div class="cardContent">
+
+                                                            <h5 class="title">@(product.Name)</h5>
+
+                                                            <div class="body-text">
+                                                                @if (product.OfferPrice != null)
+                                                                {
+                                                                    <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                                                                }
+                                                                <div class="price">@("$" + product.Price)</div>
+                                                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="load-more">
+            <button class="btn-outline-white">LOAD MORE <i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,200 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.hero {
+    padding-top: 3rem;
+
+    img 
+    {
+        width: 100%;
+        height:auto;
+    }
+}
+
+.product-img-text {
+    margin: 3rem 0;
+
+    .boxes2 {
+        display: block;
+
+        @include lg {
+            display: flex;
+        }
+
+        .images {
+            flex: 1.3;
+            margin-bottom: 10px;
+
+
+
+            @include xl {
+                flex: 1;
+            }
+
+            @include xxl {
+                flex: 0.8;
+            }
+
+            .big-pic {
+                text-align: center;
+                display: flex;
+                width: 100%;
+                margin-bottom: 8px;
+
+                @include lg {
+                    width: auto;
+                    text-align: center;
+                    display: flex;
+                    margin-left: 0;
+                    margin-bottom: 4px;
+                }
+            }
+
+            .small-pic {
+                text-align: center;
+                width: 48%;
+                margin: 2.6px;
+                padding-bottom: 8px;
+
+                @include lg {
+                    width: auto;
+                    margin: 0 0 0 0;
+                    padding: 0 3px 0 0;
+                }
+            }
+        }
+
+        .text {
+            flex: 1;
+            //border: $color-dark-1 1px solid;
+
+            .title {
+                font-family: $font-poppins;
+                font-size: 24px;
+                font-weight: $font-weight-medium;
+                color: $color-dark-2;
+            }
+
+            p {
+                font-weight: $font-weight-regular;
+            }
+
+            hr {
+                margin-top: 2rem;
+                margin-bottom: 1.7rem;
+                color: $color-dark-4;
+            }
+
+            .star-text {
+                display: flex;
+
+                i {
+                    color: $color-yellow2;
+                }
+
+                .rev {
+                    margin-left: 0.8rem;
+                    font-weight: $font-weight-regular;
+                    color: $color-dark-2;
+                }
+            }
+
+            .price {
+                margin-bottom: 1rem;
+                font-family: $font-poppins;
+                font-size: 24px;
+                font-weight: $font-weight-semibold;
+                color: $color-dark-2;
+            }
+
+            .amount {
+                display: flex;
+                text-align: center;
+                margin-bottom: 2rem;
+
+                .amount-button {
+                    margin: 0;
+                    padding: 0;
+
+                    .minus {
+                        padding: 10px 20px;
+                        margin: 0;
+                        //height: 40px;
+                        border-color: $color-amount-border;
+                        font-size: 16px;
+                    }
+
+                    .nr {
+                        padding: 10px 20px;
+                        margin: 0;
+                        border-color: $color-amount-border;
+                        font-size: 16px;
+                    }
+
+                    .plus {
+                        padding: 10px 20px;
+                        margin: 0;
+                        border-color: $color-amount-border;
+                        font-size: 16px;
+                    }
+                }
+
+                .add {
+                    margin: 0 0 0 1rem;
+                }
+            }
+
+            .in-stock {
+                display: flex;
+                margin-bottom: 2rem;
+
+
+                i {
+                    font-size: 18px;
+                    margin: 0 4px;
+                    transition: all 0.2s;
+                }
+
+                .red {
+                    color: $color-theme-1;
+
+                    &:hover {
+                        color: $color-dark-3;
+                    }
+                }
+
+                .yellow {
+                    color: $color-yellow;
+
+                    &:hover {
+                        color: $color-dark-3;
+                    }
+                }
+
+                .green {
+                    color: $color-green;
+
+                    &:hover {
+                        color: $color-dark-3;
+                    }
+                }
+
+                .sku {
+                    margin-left: 30px;
+                    color: $color-dark-2;
+                }
+            }
+
+            .btn-1 {
+                border-color: $color-amount-border;
+                border-radius: 0;
+            }
+
+            .categort-text {
+                margin-top: 1.5rem;
+                color: $color-dark-3;
+            }
+        }
+    }
+}

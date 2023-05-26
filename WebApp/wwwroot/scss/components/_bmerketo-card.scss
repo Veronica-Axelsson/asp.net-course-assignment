@@ -1,0 +1,93 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.bmerketo-card {
+    text-decoration: none;
+    display: block;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: $color-dark-2;
+    font-family: $font-poppins;
+
+    .container {
+/*        background-color: aquamarine;
+*/
+        h1{
+            font-size: 48px;
+            font-weight: $font-weight-semibold;
+            text-align:center;
+            padding:  3rem 0 2rem 0;
+        }
+        .b-card {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content:center;
+            margin: 0px;
+            padding: 0px;
+
+
+            a {
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                text-decoration: none;
+                width: 270px;
+
+
+
+                .card-body {
+                    display: block;
+                    text-decoration: none;
+
+
+                    img {
+                        width: 270px;
+                        height: auto;
+                    }
+
+                    .cardContent {
+                        color: black;
+
+
+                        .title {
+                            text-decoration: none;
+                            padding-top: 10px;
+                        }
+
+                        .body-text {
+                            display: flex;
+                            justify-content: space-between;
+
+
+
+
+                            .priceOffer 
+                            {
+                                text-decoration:line-through;
+                            }
+
+                            .price 
+                            {
+
+                            }
+
+                            i {
+                                text-decoration: none;
+                                text-align: right;
+                                align-items: center;
+                                font-size: 24px;
+                                color: $color-dark-5;
+                                padding-right: 10px;
+
+                                &:hover {
+                                    color: $color-dark-2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

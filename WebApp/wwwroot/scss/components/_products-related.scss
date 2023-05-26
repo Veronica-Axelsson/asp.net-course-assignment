@@ -1,0 +1,29 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.products-related {
+
+    .container {
+        margin-bottom: 3rem;
+    }
+
+    .title {
+        margin-top: 2rem;
+        font-family: $font-poppins;
+        font-size: 24px;
+        font-weight: $font-weight-semibold;
+        color: $color-dark-2;
+    }
+
+    p {
+        text-align: center;
+        font-size: 30px;
+
+    }
+
+    .hr {
+        
+        color: $color-dark-4;
+    }
+}
