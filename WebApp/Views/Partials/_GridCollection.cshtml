@@ -50,39 +50,39 @@
                             <div class="container">
                                 <div class="b-card ">
 
-                                       @foreach (var product in Model.Products)
-                                       {
-                                   @*       <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
-                                   
-                                        <partial name="/Views/Partials/_GridCollectionItem.cshtml" />
+                                    @foreach (var product in Model.Products)
+                                    {
+                                        @*       <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
 
-                                            </a>
-                                       *@
+                                    <partial name="/Views/Partials/_GridCollectionItem.cshtml" />
 
-                                            <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@product.ArticleNumber">
-                                                <div class="card-body">
+                                    </a>
+                                    *@
 
-                                                    @if (product.ImageUrl != null)
-                                                    {
-                                                        <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
-                                                    }
-                                                    <div class="cardContent">
+                                        <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="Details" asp-route-id="@product.ArticleNumber">
+                                            <div class="card-body">
 
-                                                        <h5 class="title">@(product.Name)</h5>
+                                                @if (product.ImageUrl != null)
+                                                {
+                                                    <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                                                }
+                                                <div class="cardContent">
 
-                                                        <div class="body-text">
-                                                            @if (product.OfferPrice != null)
-                                                            {
-                                                                <div class="priceOffer">@("$" + product.OfferPrice)</div>
-                                                            }
-                                                            <div class="price">@("$" + product.Price)</div>
-                                                            <i class="add-cart fa-regular fa-cart-plus"></i>
-                                                        </div>
+                                                    <h5 class="title">@(product.Name)</h5>
 
+                                                    <div class="body-text">
+                                                        @if (product.OfferPrice != null)
+                                                        {
+                                                            <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                                                        }
+                                                        <div class="price">@("$" + product.Price)</div>
+                                                        <i class="add-cart fa-regular fa-cart-plus"></i>
                                                     </div>
+
                                                 </div>
-                                           </a>
-                                        }
+                                            </div>
+                                        </a>
+                                    }
                                 </div>
                             </div>
                         </div>

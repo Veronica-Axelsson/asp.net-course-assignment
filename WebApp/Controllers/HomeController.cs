@@ -31,5 +31,9 @@ public class HomeController : Controller
         
     }
 
+    public IActionResult Details(string id)
+    {
 
+        return View(id);
+    }
 }

@@ -25,8 +25,6 @@ public class ProductService
         _dataContext = dataContext;
     }
 
-
-
     #endregion
 
 
@@ -140,7 +138,6 @@ public class ProductService
 
 
         return productList;
-
     }
 
 

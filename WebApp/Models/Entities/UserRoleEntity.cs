@@ -8,7 +8,7 @@ namespace WebApp.Models.Entities
     public class UserRoleEntity
     {
         [Key]
-        public string RoleId { get; set; } = null!;
+        public int RoleId { get; set; }
         public string Role { get; set; } = null!;
 
         //public ICollection<UserRoleEntity> UserRoles { get; set; } = new HashSet<UserRoleEntity>();

@@ -29,11 +29,15 @@ public class ProductDetailsController : Controller
         return View();
     }
 
-    public IActionResult Details(string articleNumber)
+
+    public IActionResult Details(string id)
     {
 
-        return View(articleNumber);
+        return View(id);
     }
+
+
+
 
 
     //public async Task<IActionResult> Index(string articleNumber)

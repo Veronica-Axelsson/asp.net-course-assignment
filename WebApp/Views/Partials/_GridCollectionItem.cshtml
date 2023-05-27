@@ -1,4 +1,45 @@
 ﻿@model GridCollectionItemViewModel
+@inject ProductRepository productRepo
+
+
+@{
+    var product = await productRepo.GetAsync(x => x.ArticleNumber == Model.ArticleNumber);
+}
+
+@if(product == null)
+{
+    <div class="container">
+        <div class="b-card ">
+            <div class="card-body">
+
+                @if (product!.ImageUrl != null)
+                {
+                    <img src="~/images/products/@product.ImageUrl" alt="@product.Name" height="50" width="50" />
+                }
+                <div class="cardContent">
+
+                    <h5 class="title">@(product.Name)</h5>
+
+                    <div class="body-text">
+                        @if (product.OfferPrice != null)
+                        {
+                            <div class="priceOffer">@("$" + product.OfferPrice)</div>
+                        }
+                        <div class="price">@("$" + product.Price)</div>
+                        <i class="add-cart fa-regular fa-cart-plus"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+@*@model GridCollectionItemViewModel
 
 
 @{
