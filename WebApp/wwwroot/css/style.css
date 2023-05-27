@@ -67,6 +67,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap");
 html, body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
@@ -109,6 +112,17 @@ html, body {
 
 .newProductPage {
   padding-top: 10rem;
+}
+
+button {
+  background-color: #FA3150;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+}
+button:hover {
+  background-color: #202020;
+  color: #FFFFFF;
 }
 
 .btn-toggle {
@@ -173,7 +187,7 @@ html, body {
 
 .btn-theme {
   cursor: pointer;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 10px 35px;
   border: 1px solid #FA3150;
   background-color: #FA3150;
@@ -185,6 +199,22 @@ html, body {
   border: 1px solid #292929;
   background-color: #292929;
   color: #FFFFFF;
+}
+
+.btn-theme-grey {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 35px;
+  border: none;
+  background-color: #292929;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+.btn-theme-grey:hover {
+  border: 1px solid #292929;
+  background-color: #FFFFFF;
+  color: #202020;
 }
 
 .btn-rounded {
@@ -387,14 +417,34 @@ input:not([type=checkbox]):focus {
   align-items: center;
 }
 
+.formStyle {
+  /*    button {
+          background-color: $color-theme-1;
+          color: $color-white;
+          border: none;
+          border-radius: 0px;
+
+          &:hover 
+          {
+              background-color: $color-dark-1;
+              color: $color-white;
+          }
+      }*/
+}
 .formStyle .borderStyle {
-  box-shadow: 10px 10px 10px #F3F2F2;
+  box-shadow: 0 0 30px #F3F2F2;
+}
+.formStyle input {
+  border: none;
 }
 .formStyle textarea {
   background-color: #FAFAFA;
+  border: none;
 }
-.formStyle button {
-  background-color: #FA3150;
+.formStyle ._box {
+  background-color: #F3F2F2;
+  width: 20px;
+  height: 20px;
 }
 
 header {
@@ -602,6 +652,10 @@ footer .container {
   margin: 0 10px 0 0;
 }
 
+.map {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 .map iframe {
   width: 100%;
   height: 250px;
@@ -693,6 +747,13 @@ footer .container {
 
 .grid-collection {
   padding: 40px 20px;
+  color: #636363;
+  /*    .adjustTab {
+  }
+
+  .adjustTab2 {
+      color: $color-dark-3 !important;
+  }*/
   /*.title {
       text-align: center;
       font-family: $font-poppins;
@@ -739,25 +800,25 @@ footer .container {
       }
   }*/
   /* .categories {
-       display: none;
-       justify-content: center;
-       list-style: none;
-       margin: 0;
-       padding: 0;
+      display: none;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-       @include lg {
-           display: flex;
-       }
+      @include lg {
+          display: flex;
+      }
 
-       .category-item {
-           margin-right: 5px;
+      .category-item {
+          margin-right: 5px;
 
-           & + li::before {
-               content: "/";
-               margin-right: 5px;
-           }
-       }
-   }*/
+          & + li::before {
+              content: "/";
+              margin-right: 5px;
+          }
+      }
+  }*/
 }
 .grid-collection h1 {
   margin-top: 2rem;
@@ -784,6 +845,7 @@ footer .container {
   padding: 1rem;
   margin: 1rem;
   background-color: transparent;
+  color: #636363;
 }
 .grid-collection .grid {
   margin-top: 40px;
@@ -814,8 +876,9 @@ footer .container {
 .grid-collection .bmerketo-card {
   text-decoration: none;
   display: block;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+  margin-top: 0rem;
   color: #292929;
   font-family: "Poppins", sans-serif;
 }
@@ -828,7 +891,8 @@ footer .container {
 .grid-collection .bmerketo-card .b-card {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  /*        justify-content: center;
+  */
   margin: 0px;
   padding: 0px;
 }
@@ -855,11 +919,16 @@ footer .container {
   padding-top: 10px;
 }
 .grid-collection .bmerketo-card .b-card a .card-body .cardContent .body-text {
-  display: flex;
-  justify-content: space-between;
+  text-align: left;
 }
 .grid-collection .bmerketo-card .b-card a .card-body .cardContent .body-text .priceOffer {
   text-decoration: line-through;
+  color: #636363;
+}
+.grid-collection .bmerketo-card .b-card a .card-body .cardContent .body-text .price {
+  color: #636363;
+  justify-content: left;
+  text-align: left;
 }
 .grid-collection .bmerketo-card .b-card a .card-body .cardContent .body-text i {
   text-decoration: none;
@@ -981,6 +1050,33 @@ footer .container {
   }
 }
 
+.Card369 .CardAll {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 5rem;
+}
+.Card369 .CardAll .title {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
+.Card369 .CardAll .cardText {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.Card369 .CardAll p {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #B0B0B0;
+}
+
 .top-selling {
   padding: 40px 20px;
 }
@@ -992,8 +1088,12 @@ footer .container {
   color: #292929;
 }
 .top-selling .collection-grid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin-top: 40px;
-  display: grid;
+  /*        display: grid;
+  */
   grid-template-columns: repeat(1, 1fr);
   gap: 40px;
 }
@@ -1170,12 +1270,26 @@ footer .container {
   padding-top: 8rem;
   padding-bottom: 6rem;
 }
+.register-form button {
+  background-color: #FA3150 !important;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+}
+.register-form button:hover {
+  background-color: #202020;
+  color: #FFFFFF;
+}
 
 ._productRegPage {
   display: flex;
 }
 ._productRegPage .reg-title {
-  padding-top: 7rem;
+  padding-top: 4rem;
+}
+._productRegPage .reg-title padding {
+  margin: 0px;
+  padding: 0px;
 }
 ._productRegPage .formDesign {
   padding-bottom: 3rem;
@@ -1185,6 +1299,10 @@ footer .container {
 }
 ._productRegPage button {
   padding: 1rem;
+}
+
+.adjustTab2 {
+  color: #636363 !important;
 }
 
 .bmerketo-card {

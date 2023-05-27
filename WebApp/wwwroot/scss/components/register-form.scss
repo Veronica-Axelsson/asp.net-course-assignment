@@ -1,4 +1,20 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
 .register-form {
     padding-top: 8rem;
     padding-bottom: 6rem;
+
+    button {
+        background-color: $color-theme-1!important;
+        color: $color-white;
+        border: none;
+        border-radius: 0px;
+
+        &:hover {
+            background-color: $color-dark-1;
+            color: $color-white;
+        }
+    }
 }

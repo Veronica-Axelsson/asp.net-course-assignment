@@ -4,13 +4,14 @@
 
 .grid-collection {
     padding: 40px 20px;
+    color: $color-dark-3;
 
     h1 {
         margin-top: 2rem;
         font-family: $font-poppins;
         color: $color-dark-2;
         font-size: 48px;
-        text-align:center;
+        text-align: center;
     }
 
     ul {
@@ -27,14 +28,20 @@
         align-items: baseline;
         background-color: transparent;
     }
+    /*    .adjustTab {
+    }
+
+    .adjustTab2 {
+        color: $color-dark-3 !important;
+    }*/
 
     .tabProducts {
         border: none;
         padding: 1rem;
         margin: 1rem;
         background-color: transparent;
+        color: $color-dark-3;
     }
-
     /*.title {
         text-align: center;
         font-family: $font-poppins;
@@ -46,7 +53,6 @@
             font-size: 48px;
         }
     }*/
-
     /*.description {
         text-align: center;
         font-family: $font-poppins;
@@ -58,7 +64,6 @@
             font-size: 48px;
         }
     }*/
-
     /*.price {
         text-align: center;
         font-family: $font-poppins;
@@ -70,7 +75,6 @@
             font-size: 48px;
         }
     }*/
-
     /*.offerprice {
         text-align: center;
         font-family: $font-poppins;
@@ -83,8 +87,7 @@
             font-size: 48px;
         }
     }*/
-
-   /* .categories {
+    /* .categories {
         display: none;
         justify-content: center;
         list-style: none;
@@ -133,8 +136,9 @@
     .bmerketo-card {
         text-decoration: none;
         display: block;
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 0rem;
+        padding-bottom: 2rem;
+        margin-top: 0rem;
         color: $color-dark-2;
         font-family: $font-poppins;
     }
@@ -149,8 +153,8 @@
     .bmerketo-card .b-card {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
-        margin: 0px;
+/*        justify-content: center;
+*/        margin: 0px;
         padding: 0px;
     }
 
@@ -185,15 +189,18 @@
     }
 
     .bmerketo-card .b-card a .card-body .cardContent .body-text {
-        display: flex;
-        justify-content: space-between;
+        text-align: left;
     }
 
     .bmerketo-card .b-card a .card-body .cardContent .body-text .priceOffer {
         text-decoration: line-through;
+        color: $color-dark-3;
     }
 
     .bmerketo-card .b-card a .card-body .cardContent .body-text .price {
+        color: $color-dark-3;
+        justify-content: left;
+        text-align: left;
     }
 
     .bmerketo-card .b-card a .card-body .cardContent .body-text i {
@@ -208,5 +215,4 @@
             color: $color-dark-2;
         }
     }
-  
 }

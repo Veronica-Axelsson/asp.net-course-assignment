@@ -1,12 +1,12 @@
-﻿@*@model ProductsViewModel*@
-@model string
-@inject ProductRepository productRepo
+﻿@model ProductsViewModel
+@*@model string
+@inject ProductRepository productRepo*@
 
 
 @{
     ViewData["Title"] = "Products";
 
-    var product = await productRepo.GetAsync(x => x.ArticleNumber == Model);
+    //var product = await productRepo.GetAsync(x => x.ArticleNumber == Model);
 
     //var products = await productService.GetAllAsync();
 }
@@ -16,9 +16,9 @@
 
 
 
-@*<div class="container newProductPage pb-5">
-    <a class="me-5 link btn btn-info " asp-controller="ProductBackoffice" asp-action="register">NEW PRODUCTs</a>
-    <a class="link btn btn-secondary" asp-controller="admin" asp-action="Index">BACK TO BACKOFFICE</a>
+<div class="container newProductPage pb-5">
+    <a class="btn-theme me-5 link btn btn-info " asp-controller="ProductBackoffice" asp-action="register">NEW PRODUCTS</a>
+    <a class="btn-theme-grey link btn btn-secondary" asp-controller="admin" asp-action="Index">BACK TO BACKOFFICE</a>
 </div>
 
 <div class="container m5-5">
@@ -72,4 +72,4 @@
             </div>
         </div>
     }
-</div>*@
+</div>

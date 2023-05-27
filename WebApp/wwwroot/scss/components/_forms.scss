@@ -2,6 +2,7 @@
 @import '../core/_fonts.scss';
 @import '../core/_mixins.scss';
 
+
 textarea,
 input,
 input:not([type="checkbox"]) {
@@ -92,14 +93,34 @@ input:not([type="checkbox"]) {
 .formStyle {
 
     .borderStyle {
-        box-shadow: 10px 10px 10px $color-theme-3;
+        box-shadow: 0 0 30px $color-theme-3;
+    }
+
+    input {
+        border: none;
     }
 
     textarea {
         background-color: $color-theme-4;
+        border: none;
     }
 
-    button {
-        background-color: $color-theme-1;
+    ._box {
+        background-color: $color-theme-3;
+        width: 20px;
+        height: 20px;
     }
+
+/*    button {
+        background-color: $color-theme-1;
+        color: $color-white;
+        border: none;
+        border-radius: 0px;
+
+        &:hover 
+        {
+            background-color: $color-dark-1;
+            color: $color-white;
+        }
+    }*/
 }

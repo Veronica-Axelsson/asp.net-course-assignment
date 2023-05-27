@@ -3,6 +3,9 @@
 @import '../core/_mixins.scss';
 
 .map {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
     iframe {
         width: 100%;
         height: 250px;

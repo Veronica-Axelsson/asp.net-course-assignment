@@ -2,11 +2,11 @@
 
 <section class="formStyle">
     <div class="container d-flex justify-content-center mb-5 mt-5">
-        <div class="borderStyle px-5 col-10 col-lg-6">
+        <div class="borderStyle px-5 col-10 col-lg-8">
 
             <div class="d-flex justify-content-left">
                 <div class="mt-5">
-                    <p>Write to us</p>
+                    <p class="m-0 p-0">Write to us</p>
                     <p>-----------</p>
                 </div>
             </div>
@@ -59,8 +59,15 @@
                         <small><span asp-validation-for="Description" class="text-danger"></span></small>
                     </div>
 
-                    <div class="d-grid mt-2 mb-5" style="width:20%">
-                        <button type="submit" class="btn btn-success mt-5">Submit</button>
+                    @* checkbox går att klicka i, men används i övrigt inte.*@
+                    <div class="d-flex pe-2 me-5">
+                        <input type="checkbox" class="_box " />
+                        <label class="ps-2 form-check-label">Save my name, email, and website in this browser for the next time I comment.</label>
+                    </div>
+                    
+
+                    <div class="mt-2 mb-5" style="width:20%">
+                        <button type="submit" class="btn-theme btn mt-5">Submit</button>
                     </div>
                 </div>
 

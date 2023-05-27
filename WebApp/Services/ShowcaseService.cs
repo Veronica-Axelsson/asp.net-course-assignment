@@ -17,17 +17,17 @@ public class ShowcaseService
             Url = "/products",
         }
      },
-    new ShowcaseModel()
-    {
-        Ingress = "BMERKETO THE BEST A PERSON CAN GET",
-        Title = "Now with all new spices",
-        ImageUrl = "images/placeholders/625x647.svg",
-        Button = new LinkButtonModel
-        {
-            Content = "SHOP NOW",
-            Url = "/products",
-        }
-     }
+    //new ShowcaseModel()
+    //{
+    //    Ingress = "BMERKETO THE BEST A PERSON CAN GET",
+    //    Title = "Now with all new spices",
+    //    ImageUrl = "images/placeholders/625x647.svg",
+    //    Button = new LinkButtonModel
+    //    {
+    //        Content = "SHOP NOW",
+    //        Url = "/products",
+    //    }
+    // }
     };
 
 

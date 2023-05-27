@@ -6,14 +6,18 @@
     display: flex;
 
     .reg-title {
-        padding-top: 7rem;
+        padding-top: 4rem;
+
+        padding {
+            margin: 0px;
+            padding: 0px;
+        }
     }
 
     .formDesign {
         padding-bottom: 3rem;
-        
-        ._formAdjust 
-        {
+
+        ._formAdjust {
             margin-top: 2rem;
         }
     }
