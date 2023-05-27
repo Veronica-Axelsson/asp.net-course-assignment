@@ -7,7 +7,7 @@ namespace WebApp.Models.Dtos;
 
 public class UserProfile
 {
-    [Key/*, ForeignKey(nameof(User))*/]
+    [Key]
     public string UserId { get; set; } = null!;
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
@@ -24,12 +24,4 @@ public class UserProfile
 
 
     public ICollection<UserRoleEntity> UserRole { get; set; } = new HashSet<UserRoleEntity>();
-
-
-    //Koppla denna till tabell eller något?
-    //public string Role { get; set; } = null!;
-    //public List<string> Role = new();
-
-
-    //public IdentityUser User { get; set; } = null!;
 }

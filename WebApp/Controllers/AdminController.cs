@@ -10,17 +10,12 @@ namespace WebApp.Controllers
     {
         #region constructors & private fields
 
-        //private readonly ProductService _productService;
-        //private readonly TagService _tagService;
         private readonly UserService _userService;
 
         public AdminController(UserService userService)
         {
             _userService = userService;
         }
-
-
-
 
         #endregion
 

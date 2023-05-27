@@ -38,10 +38,6 @@ public class Repo<TEntity> where TEntity : class
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
-
-
-        //var entity = await _context.Set<TEntity>().FirstOrDefaultAsync(predicate);
-        //return entity!;
     }
 
     public virtual async Task<IEnumerable<TEntity>> GetAsync()
@@ -63,6 +59,4 @@ public class Repo<TEntity> where TEntity : class
         var entity = await _context.Set<TEntity>().ToListAsync();
         return entity!;
     }
-
-
 }

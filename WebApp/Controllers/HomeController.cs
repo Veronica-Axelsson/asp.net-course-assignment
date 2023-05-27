@@ -9,12 +9,10 @@ public class HomeController : Controller
     #region constructors & private fields
 
     private readonly ProductService _productService;
-    //private readonly TagService _tagService;
 
-    public HomeController(ProductService productService/*, TagService tagService*/)
+    public HomeController(ProductService productService)
     {
         _productService = productService;
-        //_tagService = tagService;
     }
 
     #endregion

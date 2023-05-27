@@ -21,9 +21,7 @@ public class AutService
         _identityContext = identityContext;
         _signInManager = signInManager;
         _seedService = seedService;
- 
     }
-
 
 
 
@@ -34,7 +32,7 @@ public class AutService
             await _seedService.SeedRoles();
             var roleName = "user";
 
-            if(!await _userManager.Users.AnyAsync())
+            if (!await _userManager.Users.AnyAsync())
                 roleName = "admin";
 
             IdentityUser identityUser = model;
@@ -54,8 +52,6 @@ public class AutService
     }
 
 
-
-
     public async Task<bool> SignInAsync(UserSignInViewModel model)
     {
         try
@@ -72,6 +68,5 @@ public class AutService
         await _signInManager.SignOutAsync();
 
         return _signInManager.IsSignedIn(user);
-        
     }
 }

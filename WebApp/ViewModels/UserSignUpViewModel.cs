@@ -73,19 +73,6 @@ public class UserSignUpViewModel
 
 
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static implicit operator IdentityUser(UserSignUpViewModel model)
     {

@@ -33,8 +33,6 @@ public class ContactsController : Controller
             var contact = await _contactService.CreateAsync(contactEntity);
             if (contact != null)
             {
-
-
                 return RedirectToAction("Index");
             }
 
