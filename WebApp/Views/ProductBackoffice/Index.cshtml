@@ -1,6 +1,6 @@
-﻿@model ProductsViewModel
-@*@model string
-@inject ProductRepository productRepo*@
+﻿@*@model ProductsViewModel*@
+@model string
+@inject ProductRepository productRepo
 
 
 @{
@@ -11,6 +11,20 @@
     //var products = await productService.GetAllAsync();
 }
 
+<div>
+    @foreach (var product in await productRepo.GetAsync())
+    {
+        <div>
+            <div><a asp-action="Details" asp-route-id="@product.ArticleNumber">@product.Name</a></div>
+            <div>
+                @foreach (var tag in product.ProductTags)
+                {
+                    <span class="me-2">@tag.TagId</span>
+                }
+            </div>
+        </div>
+    }
+</div>
 
 
 
@@ -21,7 +35,7 @@
     <a class="btn-theme-grey link btn btn-secondary" asp-controller="admin" asp-action="Index">BACK TO BACKOFFICE</a>
 </div>
 
-<div class="container m5-5">
+@*<div class="container m5-5">
     @foreach (var product in Model.Products)
     {
         <div class="card mb-3">
@@ -72,4 +86,4 @@
             </div>
         </div>
     }
-</div>
+</div>*@

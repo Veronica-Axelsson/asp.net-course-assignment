@@ -1,12 +1,26 @@
-﻿@model string
+﻿@model int
 @inject ProductRepository productRepo
 
 @{
-    var product = await productRepo.GetAsync(x => x.ArticleNumber == Model);
+    var product = await productRepo.GetAsync(x => x.ArticleNumber == Model.ToString());
 }
+<div class="pt-5"></div>
+<div class="pt-5">hohoho</div>
+<div class="pt-5">Hej</div>
+<div>Article number: @Model</div>
+<div class="pt-5">hehehe</div>
+
+
+<div class="mt-5">
+    <partial name="/Views/Partials/_UpToSell.cshtml" />
+
+</div>
+
+
+
 
 <div class="pt-5">
-    <div class="pt-5">Article number:</div>
+    <div class="pt-5">Article number: @Model</div>
     <div>Hej</div>
 </div>
 
@@ -30,3 +44,5 @@ else
         No product found!!!
     </div>
 }
+
+

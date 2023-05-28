@@ -1,5 +1,7 @@
 ﻿@model GridCollectionItemViewModel
 
+@inject ProductRepository productRepo
+
 
 
 <section class="grid-collection">
@@ -46,20 +48,38 @@
                     <!-- Tab All products -->
                     <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
 
+                     @*   <div>
+                            @foreach(var product in await productRepo.GetAsync())
+                            {
+                                <div>
+                                    <div><a asp-action="index" asp-controller="ProductDetails" asp-route-id="@product.ArticleNumber">@product.Name</a></div>
+                                    <div>
+                                        @foreach(var tag in product.ProductTags)
+                                        {
+                                            <span class="me-2">@tag.TagId</span>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>*@
+
+
+      
+
                         <div class="bmerketo-card">
                             <div class="container">
                                 <div class="b-card ">
 
                                     @foreach (var product in Model.Products)
                                     {
-                                        @*       <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
+                                              @* <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
 
                                     <partial name="/Views/Partials/_GridCollectionItem.cshtml" />
 
-                                    </a>
-                                    *@
+                                    </a>*@
+                                    
 
-                                        <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="Details" asp-route-id="@product.ArticleNumber">
+                                        <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="details" asp-route-id="@product.ArticleNumber">
                                             <div class="card-body">
 
                                                 @if (product.ImageUrl != null)

@@ -9,19 +9,19 @@ namespace WebApp.Controllers;
 
 public class ProductDetailsController : Controller
 {
-    #region constructors & private fields
+    //#region constructors & private fields
 
-    private readonly ProductDetailsService _productDetailsService;
-    private readonly DataContext _dataContext;
+    //private readonly ProductDetailsService _productDetailsService;
+    //private readonly DataContext _dataContext;
 
 
-    public ProductDetailsController(ProductDetailsService productDetailsService, DataContext dataContext)
-    {
-        _productDetailsService = productDetailsService;
-        _dataContext = dataContext;
-    }
+    //public ProductDetailsController(ProductDetailsService productDetailsService, DataContext dataContext)
+    //{
+    //    _productDetailsService = productDetailsService;
+    //    _dataContext = dataContext;
+    //}
 
-    #endregion
+    //#endregion
 
     public IActionResult Index()
     {
@@ -30,7 +30,7 @@ public class ProductDetailsController : Controller
     }
 
 
-    public IActionResult Details(string id)
+    public IActionResult Details(int id)
     {
 
         return View(id);

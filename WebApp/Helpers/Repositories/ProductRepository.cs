@@ -16,13 +16,13 @@ namespace WebApp.Helpers.Repositories
 
         public override async Task<IEnumerable<ProductEntity>> GetAsync()
         {
-            var products = await _context.Products.Include(x => x.ProductTags).ThenInclude(y => y.Tag).ToListAsync();
+            var products = await _context.Products.Include(x => x.ProductTags).ThenInclude(x => x.Tag).ToListAsync();
             return products;
         }
 
         public override async Task<ProductEntity> GetAsync(Expression<Func<ProductEntity, bool>> expression)
         {
-            var product = await _context.Products.Include(x => x.ProductTags).ThenInclude(y => y.Tag).FirstOrDefaultAsync(expression);
+            var product = await _context.Products.Include(x => x.ProductTags).ThenInclude(x => x.Tag).FirstOrDefaultAsync(expression);
             return product!;
         }
     }
