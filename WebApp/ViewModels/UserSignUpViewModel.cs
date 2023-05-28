@@ -72,6 +72,11 @@ public class UserSignUpViewModel
     public string ConfirmPassword { get; set; } = null!;
 
 
+    [DataType(DataType.Upload)]
+    public IFormFile? ProfileImg { get; set; }
+
+
+    
 
 
     public static implicit operator IdentityUser(UserSignUpViewModel model)
@@ -100,10 +105,10 @@ public class UserSignUpViewModel
 
         };
 
-        //if (viewModel.ProfileImg != null)
-        //{
-        //    entity.UserImageUrl = $"{Guid.NewGuid()}_{viewModel.ProfileImg?.FileName}";
-        //}
+        if (model.ProfileImg != null)
+        {
+            entity.UserImageUrl = $"{Guid.NewGuid()}_{model.ProfileImg?.FileName}";
+        }
 
         return entity;
     }

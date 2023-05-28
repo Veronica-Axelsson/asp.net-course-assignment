@@ -18,6 +18,8 @@ public class UserProfile
     public string City { get; set; } = null!;
     public string? Mobile { get; set; }
     public string? Company { get; set; }
+    public string? UserImageUrl { get; set; } = null!;
+
 
 
     public List<string> RoleNames { get; set; } = new List<string>();

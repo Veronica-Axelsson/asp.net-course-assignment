@@ -71,7 +71,7 @@ input:not([type="checkbox"]) {
 
     label {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 5px; 
     }
 
     span {
@@ -105,13 +105,8 @@ input:not([type="checkbox"]) {
         border: none;
     }
 
-    ._box {
-        background-color: $color-theme-3;
-        width: 20px;
-        height: 20px;
-    }
 
-/*    button {
+    /*    button {
         background-color: $color-theme-1;
         color: $color-white;
         border: none;
@@ -123,4 +118,23 @@ input:not([type="checkbox"]) {
             color: $color-white;
         }
     }*/
+}
+
+.boxStyle {
+/*    display: flex;
+    justify-content: left;
+    align-content: center;*/
+}
+
+
+._box {
+    background-color: $color-theme-3;
+    width: 20px;
+    height: 20px;
+}
+
+.redText
+{
+    color: $color-theme-1;
+    text-decoration: none;
 }

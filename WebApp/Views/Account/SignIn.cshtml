@@ -34,9 +34,9 @@
 
 
             <div class="mb-3">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-left">
                     <label asp-for="Email" class="form-label"></label>
-                    <a class="ps-4 link" asp-controller="account" asp-action="Register">Don't have an Account yet?</a>
+                    <a class="redText ps-4 link" asp-controller="account" asp-action="Register">Don't have an Account yet?</a>
                 </div>
              
                 <input asp-for="Email" class="form-control" />
@@ -46,7 +46,7 @@
             <div class="mb-3 mt-5">
                 <div class="d-flex justify-content-between">
                     <label asp-for="Password" class="form-label"></label>
-                    <p class="ps-4">Forgot Your Password ? </p>
+                    <p class="redText ps-4">Forgot Your Password ? </p>
                 </div>
 
                 <input asp-for="Password" class="form-control" />
@@ -54,8 +54,12 @@
             </div>
 
 
-@*            <p>[Box]  Please keep me logged in</p>
-*@
+            @* checkbox går att klicka i, men används i övrigt inte.*@
+            <div class="d-flex justify-content-left _boxStyle  pe-2 me-5 ">
+                <input type="checkbox" class="_box" />
+                <label class="ps-2 form-check-label">Please keep me logged in</label>
+            </div>
+
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Please keep me logged in" />
 
 @*                <asp:RequiredFieldValidator ID="rfvAgree" runat="server" ControlToValidate="chkAgree" Text="You must accept the terms and agreements." />

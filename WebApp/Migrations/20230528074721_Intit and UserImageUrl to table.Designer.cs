@@ -12,8 +12,8 @@ using WebApp.Context;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20230526120628_Init")]
-    partial class Init
+    [Migration("20230528074721_Intit and UserImageUrl to table")]
+    partial class IntitandUserImageUrltotable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -254,6 +254,9 @@ namespace WebApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("UserId");
 
                     b.ToTable("UserProfiles");
@@ -261,8 +264,11 @@ namespace WebApp.Migrations
 
             modelBuilder.Entity("WebApp.Models.Entities.UserRoleEntity", b =>
                 {
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"));
 
                     b.Property<string>("Role")
                         .IsRequired()

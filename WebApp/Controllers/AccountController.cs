@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.Dtos;
 using WebApp.Services;
 using WebApp.ViewModels;
 
@@ -8,10 +9,12 @@ namespace WebApp.Controllers
     public class AccountController : Controller
     {
         private readonly AutService _auth;
+        private readonly UserService _userService;
 
-        public AccountController(AutService auth)
+        public AccountController(AutService auth, UserService userService)
         {
             _auth = auth;
+            _userService = userService;
         }
 
 
@@ -31,10 +34,17 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(UserSignUpViewModel model)
         {
+            var userprofile = new UserProfile();
             if (ModelState.IsValid)
             {
                 if (await _auth.SignUpAsync(model))
+                {
+                    if (model.ProfileImg != null)
+                        await _userService.UploadProfileImageAsync( userprofile, model.ProfileImg!);
+
                     return RedirectToAction("SignIn");
+
+                }
 
                 else 
                     ModelState.AddModelError("", "A user with the same email already exists");

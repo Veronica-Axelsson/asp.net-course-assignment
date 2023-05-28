@@ -15,6 +15,8 @@ public class UserProfileEntity
     public string City { get; set; } = null!;
     public string? Mobile { get; set; }
     public string? Company { get; set; }
+    public string? UserImageUrl { get; set; } = null!;
+
 
 
     public IdentityUser User { get; set; } = null!;

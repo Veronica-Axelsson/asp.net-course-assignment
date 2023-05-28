@@ -18,3 +18,25 @@
         }
     }
 }
+
+.formStyle {
+
+    .borderStyle {
+        box-shadow: 0 0 30px $color-theme-3;
+    }
+
+    input {
+        border: none;
+    }
+
+    textarea {
+        background-color: $color-theme-4;
+        border: none;
+    }
+
+    ._box {
+        background-color: $color-theme-3;
+        width: 20px;
+        height: 20px;
+    }
+}

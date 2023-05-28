@@ -419,17 +419,17 @@ input:not([type=checkbox]):focus {
 
 .formStyle {
   /*    button {
-          background-color: $color-theme-1;
-          color: $color-white;
-          border: none;
-          border-radius: 0px;
+      background-color: $color-theme-1;
+      color: $color-white;
+      border: none;
+      border-radius: 0px;
 
-          &:hover 
-          {
-              background-color: $color-dark-1;
-              color: $color-white;
-          }
-      }*/
+      &:hover 
+      {
+          background-color: $color-dark-1;
+          color: $color-white;
+      }
+  }*/
 }
 .formStyle .borderStyle {
   box-shadow: 0 0 30px #F3F2F2;
@@ -441,10 +441,22 @@ input:not([type=checkbox]):focus {
   background-color: #FAFAFA;
   border: none;
 }
-.formStyle ._box {
+
+.boxStyle {
+  /*    display: flex;
+      justify-content: left;
+      align-content: center;*/
+}
+
+._box {
   background-color: #F3F2F2;
   width: 20px;
   height: 20px;
+}
+
+.redText {
+  color: #FA3150;
+  text-decoration: none;
 }
 
 header {
@@ -1279,6 +1291,22 @@ footer .container {
 .register-form button:hover {
   background-color: #202020;
   color: #FFFFFF;
+}
+
+.formStyle .borderStyle {
+  box-shadow: 0 0 30px #F3F2F2;
+}
+.formStyle input {
+  border: none;
+}
+.formStyle textarea {
+  background-color: #FAFAFA;
+  border: none;
+}
+.formStyle ._box {
+  background-color: #F3F2F2;
+  width: 20px;
+  height: 20px;
 }
 
 ._productRegPage {

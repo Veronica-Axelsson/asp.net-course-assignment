@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Context;
 using WebApp.Helpers.Repositories;
@@ -11,13 +12,15 @@ public class UserService
     private readonly UserRepository _userRepository;
     private readonly IdentityContext _identityContext;
     private readonly UserManager<IdentityUser> _userManager;
+    private readonly IWebHostEnvironment _webHostEnvironment;
 
 
-    public UserService(IdentityContext identityContext, UserManager<IdentityUser> userManager, UserRepository userRepository)
+    public UserService(IdentityContext identityContext, UserManager<IdentityUser> userManager, UserRepository userRepository, IWebHostEnvironment webHostEnvironment)
     {
         _identityContext = identityContext;
         _userRepository = userRepository;
         _userManager = userManager;
+        _webHostEnvironment = webHostEnvironment;
     }
 
     public async Task<IEnumerable<UserProfile>> GetUsersAndRolesAsync()
@@ -69,5 +72,16 @@ public class UserService
             userList.Add(model);
         }
         return userList;
+    }
+
+    public async Task<bool> UploadProfileImageAsync(UserProfile userImage, IFormFile image)
+    {
+        try
+        {
+            string imagePath = $"{_webHostEnvironment.WebRootPath}/images/profileImages/{userImage.UserImageUrl}";
+            await image.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+            return true;
+        }
+        catch { return false; }
     }
 }
