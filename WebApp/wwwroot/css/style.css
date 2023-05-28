@@ -1476,6 +1476,13 @@ footer .container {
   height: auto;
 }
 
+.articleTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #FA3150;
+}
+
 .product-img-text {
   margin: 3rem 0;
 }

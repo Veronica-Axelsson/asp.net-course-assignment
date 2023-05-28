@@ -7,20 +7,17 @@
     //var products = await productService.GetAllAsync();
 }
 
-<div class="bmerketo-card">
+<div class="bmerketo-card grid-collection">
+    <h1 class="title mb-5">All products</h1>
+
     <div class="container">
         <div class="b-card ">
 
+
+
             @foreach (var product in Model.Products)
             {
-                @*       <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@Model.ArticleNumber">
-
-            <partial name="/Views/Partials/_GridCollectionItem.cshtml" />
-
-            </a>
-            *@
-
-                <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="index" asp-route-id="@product.ArticleNumber">
+                <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="details" asp-route-id="@product.ArticleNumber">
                     <div class="card-body">
 
                         @if (product.ImageUrl != null)

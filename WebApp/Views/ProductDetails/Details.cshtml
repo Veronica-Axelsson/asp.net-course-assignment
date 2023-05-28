@@ -2,15 +2,268 @@
 @inject ProductRepository productRepo
 
 @{
+    ViewData["Title"] = "Products detailed page";
+
     var product = await productRepo.GetAsync(x => x.ArticleNumber == Model.ToString());
 }
-<div class="pt-5"></div>
-<div class="pt-5">hohoho</div>
-<div class="pt-5">Hej</div>
-<div>Article number: @Model</div>
-<div class="pt-5">hehehe</div>
 
 
+
+
+<!-- hero start -->
+<section class="hero">
+    <img src="~/images/placeholders/1920x300shop.svg" alt="">
+</section>
+<!-- hero end -->
+
+
+
+<div class="container">
+    <h2 class="articleTitle mt-5">Article number: @Model</h2>
+</div>
+
+
+
+<!-- product-img-text start -->
+<section class="product-img-text">
+    <div class="container">
+        <div class="boxes2">
+            <div class="d-block pe-5 me-5">
+                <div class="mb-2">
+                    <img class="big-pic" src="~/images/placeholders/501x430.svg" alt="">
+                </div>
+                <div class="images">
+                    <img class="small-pic" src="~/images/placeholders/120x113.svg" alt="">
+                    <img class="small-pic" src="~/images/placeholders/120x113.svg" alt="">
+                    <img class="small-pic" src="~/images/placeholders/120x113.svg" alt="">
+                    <img class="small-pic" src="~/images/placeholders/120x113.svg" alt="">
+                </div>
+            </div>
+           
+
+            <div class="text">
+                <div class="title">Young Star Smart Shoe in Fashion@*@Model.Title*@</div>
+                <p>Lirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. @*@Model.Description*@</p>
+                <hr class="hr" />
+
+                <div class="star-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p class="rev">16 Reviews</p>
+                </div>
+                <div class="price">@("$" + "49"@*Model.Price*@)</div>
+                <div class="amount">
+                    <div class="amount-button">
+                        <button class="minus btn">-</button>
+                        <button class="nr btn">2</button>
+                        <button class="plus btn ">+</button>
+                    </div>
+                    <button class="add btn-theme">Add to Cart <i class="fa-light fa-cart-plus"></i></button>
+                </div>
+
+
+                <div class="in-stock">
+                    <i class="red fa-solid fa-circle"></i>
+                    <i class="yellow fa-solid fa-circle"></i>
+                    <i class="green fa-solid fa-circle"></i>
+                    <div class="sku">SKU: N/A</div>
+                </div>
+                <button class="btn-1 btn">Add to wishlist</button>
+                <div class="categort-text">Category: New, Popular, Featured</div>
+
+                @*@foreach (var categories in Model.Categories)
+                {
+                    <div class="categort-text">@("$" + categories.TagName)</div>
+
+                }*@
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- product-img-text end -->
+<!--product-detail start -->
+<section class="product-detail">
+    <div class="container">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">DESCRIPTION</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="additional-info-tab" data-bs-toggle="tab" data-bs-target="#additional-info-tab-pane" type="button" role="tab" aria-controls="additional-info-tab-pane" aria-selected="false">ADDITIONAL INFO</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-tab-pane" type="button" role="tab" aria-controls="reviews-tab-pane" aria-selected="false">REVIEWS (0)</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="shipping-delivery-tab" data-bs-toggle="tab" data-bs-target="#shipping-delivery-tab-pane" type="button" role="tab" aria-controls="shipping-delivery-tab-pane" aria-selected="false">SHIPPING & DELIVERY</button>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="adjusttab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0">
+                <h2>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h2>
+                <div class="des-box">
+                    <div class="des-text">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
+                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                    </div>
+
+                    <div class="des-image">
+                        <img src="~/images/placeholders/469x356.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="additional-info-tab-pane" role="tabpanel" aria-labelledby="additional-info-tab" tabindex="0">
+                <h2>ADDITIONAL INFO</h2>
+                <div class="des-box">
+                    <div class="des-text">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
+                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                    </div>
+
+                    <div class="des-image">
+                        <img src="~/images/placeholders/469x356.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+                <h2>REVIEWS</h2>
+                <div class="des-box">
+                    <div class="des-text">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
+                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                    </div>
+
+                    <div class="des-image">
+                        <img src="./images/placeholders/469x356.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="shipping-delivery-tab-pane" role="tabpanel" aria-labelledby="shipping-delivery-tab" tabindex="0">
+                <h2>SHIPPING & DELIVERY</h2>
+                <div class="des-box">
+                    <div class="des-text">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                        <p>accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?</p>
+                        <p>Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. </p>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.</p>
+                    </div>
+
+                    <div class="des-image">
+                        <img src="./images/placeholders/469x356.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!-- product-detail end -->
+<!-- products-related start -->
+<section class="products-related">
+
+    <div class="container">
+        <hr class="hr" />
+        <div class="title">Related Products</div>
+
+        <div class="Card369">
+            <div class="CardAll mt-5 mb-0 d-flex justify-content-between">
+
+                <!-- collection-item start -->
+                <div class="card" style="width: 18rem; border: none;">
+                    <img src="~/images/placeholders/270x295.svg" alt="Placeholder">
+                    <div class="card-body">
+                        <div class="mt-0 title">Gumshoes black fashion</div>
+                        <div class="cardText pt-2 pb-2">$80.00 </div>
+                    </div>
+                </div>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <div class="card" style="width: 18rem; border: none;">
+                    <img src="~/images/placeholders/270x295.svg" alt="Placeholder">
+                    <div class="card-body">
+                        <div class="mt-0 title">Woman white dress</div>
+                        <div class="cardText pt-2 pb-2">$30.00 </div>
+                    </div>
+                </div>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <div class="card" style="width: 18rem; border: none;">
+                    <img src="~/images/placeholders/270x295.svg" alt="Placeholder">
+                    <div class="card-body">
+                        <div class="mt-0 title">Kettle water boiler</div>
+                        <div class="cardText pt-2 pb-2">$30.00 </div>
+                    </div>
+                </div>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <div class="card" style="border: none;">
+                    <img src="~/images/placeholders/270x295.svg" alt="Placeholder">
+                    <div class="card-body">
+                        <div class="mt-0 title">Congee cooking rice cooker</div>
+                        <div class="cardText pt-2 pb-2">$30.00 </div>
+                    </div>
+                </div>
+                <!-- collection-item end -->
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- products-related end -->
+<!-- img-5 start -->
+<section class="img-5">
+    <div class="container ">
+        <div class="images CardAll mt-3 mb-3 d-flex justify-content-between">
+            <img class="pic" src="~/images/placeholders/200x122.svg" alt="">
+            <img class="pic" src="~/images/placeholders/200x122.svg" alt="">
+            <img class="pic" src="~/images/placeholders/200x122.svg" alt="">
+            <img class="pic" src="~/images/placeholders/200x122.svg" alt="">
+            <img class="pic" src="~/images/placeholders/200x122.svg" alt="">
+
+        </div>
+
+    </div>
+</section>
+<!-- img-5 end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
 <div class="mt-5">
     <partial name="/Views/Partials/_UpToSell.cshtml" />
 
@@ -43,6 +296,6 @@ else
     <div>
         No product found!!!
     </div>
-}
+}*@
 
 

@@ -22,6 +22,9 @@ public class GridCollectionItemViewModel
 
     public IEnumerable<Product> Products { get; set; } = new List<Product>();
 
+    public IEnumerable<Newsletter> Newsletters { get; set; } = new List<Newsletter>();
+
+
     //[Key]
     //public string ArticleNumber { get; set; } = null!;
     //public IFormFile ProductImage { get; set; } = null!;

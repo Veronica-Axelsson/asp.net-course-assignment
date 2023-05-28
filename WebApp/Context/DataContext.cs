@@ -10,6 +10,7 @@ namespace WebApp.Context
         }
 
         public DbSet<ContactEntity> Contacts { get; set; }
+        public DbSet<NewsletterEntity> Newsletters { get; set; }
 
         public DbSet<ProductEntity> Products { get; set; }
 

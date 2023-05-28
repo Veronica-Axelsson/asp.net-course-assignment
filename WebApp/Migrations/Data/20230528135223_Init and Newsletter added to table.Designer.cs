@@ -12,8 +12,8 @@ using WebApp.Context;
 namespace WebApp.Migrations.Data
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230526120521_Init")]
-    partial class Init
+    [Migration("20230528135223_Init and Newsletter added to table")]
+    partial class InitandNewsletteraddedtotable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,21 @@ namespace WebApp.Migrations.Data
                     b.HasKey("ContactId");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.NewsletterEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Newsletters");
                 });
 
             modelBuilder.Entity("WebApp.Models.Entities.ProductEntity", b =>

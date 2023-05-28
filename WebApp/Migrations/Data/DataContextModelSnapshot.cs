@@ -51,13 +51,25 @@ namespace WebApp.Migrations.Data
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("WebApp.Models.Entities.NewsletterEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Newsletters");
+                });
+
             modelBuilder.Entity("WebApp.Models.Entities.ProductEntity", b =>
                 {
-                    b.Property<int>("ArticleNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArticleNumber"));
+                    b.Property<string>("ArticleNumber")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
@@ -87,8 +99,8 @@ namespace WebApp.Migrations.Data
 
             modelBuilder.Entity("WebApp.Models.Entities.ProductTagEntity", b =>
                 {
-                    b.Property<int>("ArticleNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("ArticleNumber")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("TagId")
                         .HasColumnType("int");
