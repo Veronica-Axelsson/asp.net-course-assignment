@@ -9,16 +9,14 @@ namespace WebApp.Services;
 
 public class UserService
 {
-    private readonly UserRepository _userRepository;
     private readonly IdentityContext _identityContext;
     private readonly UserManager<IdentityUser> _userManager;
     private readonly IWebHostEnvironment _webHostEnvironment;
 
 
-    public UserService(IdentityContext identityContext, UserManager<IdentityUser> userManager, UserRepository userRepository, IWebHostEnvironment webHostEnvironment)
+    public UserService(IdentityContext identityContext, UserManager<IdentityUser> userManager, IWebHostEnvironment webHostEnvironment)
     {
         _identityContext = identityContext;
-        _userRepository = userRepository;
         _userManager = userManager;
         _webHostEnvironment = webHostEnvironment;
     }
@@ -45,8 +43,6 @@ public class UserService
 
         return users;
     }
-
-
 
     public async Task<IEnumerable<UserProfile>> GetAllAsync()
     {

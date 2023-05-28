@@ -12,6 +12,5 @@ public class IdentityContext : IdentityDbContext
     }
 
     public DbSet<UserProfileEntity> UserProfiles { get; set; }
-
     public DbSet<UserRoleEntity> UserRole { get; set; }
 }

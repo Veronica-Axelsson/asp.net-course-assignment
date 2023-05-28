@@ -4,12 +4,8 @@
     ViewData["Title"] = "Register new  account";
 }
 
-
 <div class="register-form d-flex">
     <div class="col-12 mt-3 d-flex justify-content-center">
-
-
-
 
         <form enctype="multipart/form-data" method="post" novalidate runat="server" class=" col-xl-6">
             <p>Please Register Your new Account</p>
@@ -32,8 +28,6 @@
                     <small><span asp-validation-for="LastName" class="text-danger"></span></small>
                 </div>
             </div>
-
-
 
             <div class="mb-3">
                 <label asp-for="StreetName" class="form-label"></label>
@@ -99,26 +93,23 @@
             <small><span asp-validation-for="ProfileImg" class="text-danger"></span></small>
             </div>
 
-            <p>[Box]  I have read and accepts the terms and agreements</p>
             <div class="d-flex">
-                @*      @foreach (SelectListItem tag in ViewBag.Tags)
-                {
-                <div class="d-flex pe-2 me-5">
-                <input type="checkbox" name="Tags" id="tag-@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
-                <label for="tag-@tag.Text-@tag.Value" class="ps-2 form-check-label">@tag.Text</label>
+                @* checkbox går att klicka i, men används i övrigt inte.*@
+                <div class="d-flex justify-content-left _boxStyle pt-5 pe-2 me-5 ">
+                    <input type="checkbox" class="_box" />
+                    <label class="ps-2 form-check-label">I have read and accepts the terms and agreements</label>
                 </div>
-                }
-
-                *@
                 <asp:CheckBox ID="CheckBox1" runat="server" Text="I have read and accept the terms and agreements" />
 
                 <asp:RequiredFieldValidator ID="rfvAgree" runat="server" ControlToValidate="chkAgree" Text="You must accept the terms and agreements." />
             </div>
+
             <div class="mt-5">
                 <div class="">
                     <button type="submit" class="btn-theme btn btn-success">Submit</button>
                 </div>
             </div>
+
         </form>
     </div>
 </div>

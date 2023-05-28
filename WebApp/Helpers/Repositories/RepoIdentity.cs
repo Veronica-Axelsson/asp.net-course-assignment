@@ -35,7 +35,4 @@ public class RepoIdentity<TEntity> where TEntity : class
         var entity = await _identityContext.Set<TEntity>().ToListAsync();
         return entity!;
     }
-
-
-
 }

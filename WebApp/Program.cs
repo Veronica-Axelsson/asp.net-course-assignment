@@ -47,8 +47,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>
     x.User.RequireUniqueEmail = false;
 
 })
-    .AddEntityFrameworkStores<IdentityContext>()
-    /*.AddClaimsPrincipalFactory<CustomClaimsPrincipalFactory>()*/;
+    .AddEntityFrameworkStores<IdentityContext>();
 
 
 

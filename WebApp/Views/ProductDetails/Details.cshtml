@@ -7,22 +7,15 @@
     var product = await productRepo.GetAsync(x => x.ArticleNumber == Model.ToString());
 }
 
-
-
-
 <!-- hero start -->
 <section class="hero">
     <img src="~/images/placeholders/1920x300shop.svg" alt="">
 </section>
 <!-- hero end -->
 
-
-
 <div class="container">
     <h2 class="articleTitle mt-5">Article number: @Model</h2>
 </div>
-
-
 
 <!-- product-img-text start -->
 <section class="product-img-text">
@@ -247,55 +240,3 @@
     </div>
 </section>
 <!-- img-5 end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*
-<div class="mt-5">
-    <partial name="/Views/Partials/_UpToSell.cshtml" />
-
-</div>
-
-
-
-
-<div class="pt-5">
-    <div class="pt-5">Article number: @Model</div>
-    <div>Hej</div>
-</div>
-
-@if (product != null)
-{
-    <div>
-        <div>@product.ArticleNumber</div>
-        <div>@product.Name</div>
-        <div>
-            @foreach (var tag in product.ProductTags)
-            {
-                <span class="me-2">@tag.Tag.TagName</span>
-            }
-        </div>
-        <div>@product.Description</div>
-    </div>
-}
-else
-{
-    <div>
-        No product found!!!
-    </div>
-}*@
-
-

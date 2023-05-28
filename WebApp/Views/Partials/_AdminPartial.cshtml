@@ -9,10 +9,7 @@
     <p>Du måste i backoffice-systemet kunna lista upp samtliga användare och visa deras roll.</p>
 
     <a class="link btn btn-info" asp-controller="ProductBackoffice" asp-action="index">TO PRODUCTS</a>
-
-
 </div>
-
 
 
 <div class="container">
@@ -39,55 +36,3 @@
         </div>
     }
 </div>
-
-
-
-@*<div class="container m5-5">
-    @foreach (var product in Model.Products)
-    {
-        <div class="card mb-3">
-            <div class="card-body">
-                <div class="d-flex justify-content-left align-items-center">
-                  
-                    <div class="mx-4">@("Article number: " + @product.ArticleNumber)</div>
-                    <div class="mx-4">@("Name: " + product.Name)</div>
-                    <div class="mx-4">@("Price: " + product.Price)</div>
-                    @if (product.OfferPrice != null)
-                    {
-                        <div class="mx-4">@("Offer price: " + product.OfferPrice)</div>
-                    }
-                </div>
-
-                <div class="d-flex mt-4">
-                    <p class="">Categories: </p>
-                    <div class="d-flex">
-                        @foreach (var categorie in product.Tags)
-                        {
-                            if (@categorie.TagId == 1)
-                            {
-                                <div class="mx-4">New</div>
-
-                            }
-
-                            if (@categorie.TagId == 2)
-                            {
-                                <div class="mx-4">Popular</div>
-
-                            }
-
-                            if (@categorie.TagId == 3)
-                            {
-                                <div class="mx-4">Featured</div>
-
-                            }
-                        }
-                    </div>
-                </div>
-
-                <div>
-                    <div class="mt-2">@("Description: " + product.Description)</div>
-                </div>
-            </div>
-        </div>
-    }
-</div>*@

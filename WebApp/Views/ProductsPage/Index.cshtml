@@ -1,10 +1,7 @@
 ﻿@model ProductCombinedViewModel
 
-
 @{
     ViewData["Title"] = "Products";
-
-    //var products = await productService.GetAllAsync();
 }
 
 <div class="bmerketo-card grid-collection">
@@ -12,9 +9,6 @@
 
     <div class="container">
         <div class="b-card ">
-
-
-
             @foreach (var product in Model.Products)
             {
                 <a class="collection-item m-3" asp-controller="ProductDetails" asp-action="details" asp-route-id="@product.ArticleNumber">
@@ -44,40 +38,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-@*@model string
-@inject ProductRepository productRepo
-
-@{
-    var product = await productRepo.GetAsync(x => x.ArticleNumber == Model);
-}
-
-<div class="pt-5">
-    <div class="pt-5">Article number:</div>
-    <div>Hej</div>
-</div>
-
-@if (product != null)
-{
-    <div>
-        <div>@product.ArticleNumber</div>
-        <div>@product.Name</div>
-        <div>
-            @foreach (var tag in product.ProductTags)
-            {
-                <span class="me-2">@tag.Tag.TagName</span>
-            }
-        </div>
-        <div>@product.Description</div>
-    </div>
-}
-else
-{
-    <div>
-        No product found!!!
-    </div>
-}*@

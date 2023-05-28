@@ -23,14 +23,12 @@ public class UserSignUpViewModel
     [Display(Name = "Street name*")]
     [Required(ErrorMessage = "You must enter your street name")]
     [StringLength(50, MinimumLength = 3)]
-    //[RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "You must enter your street name")]
     public string StreetName { get; set; } = null!;
 
 
     [Display(Name = "Postal Code*")]
     [Required(ErrorMessage = "You must enter your postal Code")]
     [StringLength(15, MinimumLength = 3)]
-    //[RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "You must enter your postal Code")]
     public string PostalCode { get; set; } = null!;
 
 

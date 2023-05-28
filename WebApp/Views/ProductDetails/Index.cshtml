@@ -1,24 +1,2 @@
-﻿@*@inject ProductRepository productRepo
-
-<div class="pt-5">
-    <div class="pt-5">Article number:</div> 
-    <div>Hej</div>
-</div>
-
-
-   <div>
-        @foreach(var product in await productRepo.GetAsync())
-        {
-            <div>
-            <div><a asp-action="details" asp-route-id="@product.ArticleNumber">@product.Name</a></div>
-                <div>
-                    @foreach(var tag in product.ProductTags)
-                    {
-                        <span class="me-2">@tag.TagId</span>
-                    }
-                </div>
-            </div>
-        }
-    </div>*@
-
+﻿
 

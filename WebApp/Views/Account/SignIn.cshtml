@@ -23,9 +23,6 @@
 <div class="register-form d-flex">
     <div class="col-12 mt-3 d-flex justify-content-center">
 
-
-
-
         <form method="post" novalidate runat="server" class=" col-xl-6">
             <p>Please Login to Your Account</p>
             <p>-----------</p>
@@ -55,27 +52,17 @@
 
 
             @* checkbox går att klicka i, men används i övrigt inte.*@
-            <div class="d-flex justify-content-left _boxStyle  pe-2 me-5 ">
+            <div class="d-flex justify-content-left _boxStyle pt-3 pe-2 me-5 ">
                 <input type="checkbox" class="_box" />
                 <label class="ps-2 form-check-label">Please keep me logged in</label>
             </div>
 
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Please keep me logged in" />
-
-@*                <asp:RequiredFieldValidator ID="rfvAgree" runat="server" ControlToValidate="chkAgree" Text="You must accept the terms and agreements." />
-*@
            
             <div class="mt-5">  
                 <button type="submit" class="btn-theme btn btn-success">Submit</button>
             </div>
 
-
-
-
         </form>
     </div>
-
-
-
-
 </div>

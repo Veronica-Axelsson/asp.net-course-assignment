@@ -13,7 +13,6 @@ namespace WebApp.ViewModels
         public string Email { get; set; } = null!;
 
 
-
         public static implicit operator NewsletterEntity(NewsletterViewModel viewModel)
         {
             var entity = new NewsletterEntity

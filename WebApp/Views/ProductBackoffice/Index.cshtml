@@ -5,29 +5,7 @@
 
 @{
     ViewData["Title"] = "Products";
-
-    //var product = await productRepo.GetAsync(x => x.ArticleNumber == Model);
-
-    //var products = await productService.GetAllAsync();
 }
-
-@*<div>
-    @foreach (var product in await productRepo.GetAsync())
-    {
-        <div>
-            <div><a asp-action="Details" asp-route-id="@product.ArticleNumber">@product.Name</a></div>
-            <div>
-                @foreach (var tag in product.ProductTags)
-                {
-                    <span class="me-2">@tag.TagId</span>
-                }
-            </div>
-        </div>
-    }
-</div>
-
-*@
-
 
 
 <div class="container newProductPage pb-5">
@@ -62,19 +40,16 @@
                             if (@categorie.TagId == 1)
                             {
                                 <div class="mx-4">New</div>
-
                             }
 
                             if (@categorie.TagId == 2)
                             {
                                 <div class="mx-4">Popular</div>
-
                             }
 
                             if (@categorie.TagId == 3)
                             {
                                 <div class="mx-4">Featured</div>
-
                             }
                         }
                     </div>
