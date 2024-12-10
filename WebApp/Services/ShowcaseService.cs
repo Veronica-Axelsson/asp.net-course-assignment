@@ -9,8 +9,8 @@ public class ShowcaseService
             new ShowcaseModel()
     {
         Ingress = "WELCOME TO BMERKETO SHOP",
-        Title = "Exclusive Chair gold Collection.",
-        ImageUrl = "images/placeholders/625x647.svg",
+        Title = "Exclusive Striped T-shirt.",
+        ImageUrl = "images/products/c73055ef-c7fd-48e8-97c7-d3c74b2fcd26_BC270x295_StripedT-Shirt.jpg",
         Button = new LinkButtonModel
         {
             Content = "SHOP NOW",

@@ -47,6 +47,7 @@
             font-weight: $font-weight-regular;
             margin-bottom: 20px;
         }
+
         .title {
             font-size: 50px;
             font-weight: $font-weight-bold;
@@ -70,6 +71,7 @@
         @include lg {
             flex: 1;
             display: block;
+            padding-top: 60px;
         }
     }
 

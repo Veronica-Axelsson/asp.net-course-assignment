@@ -750,6 +750,7 @@ footer .container {
   .showcase .content-image {
     flex: 1;
     display: block;
+    padding-top: 60px;
   }
 }
 .showcase img {
